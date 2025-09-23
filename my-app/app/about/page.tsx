@@ -7,7 +7,7 @@ const About = () => {
 
       <p className='w-screen mt-6 h-20 flex justify-center items-center text-2xl text-center'>Those are 3 main tools I use for communication,<br/> I am trying my best to reply within a day, so <br/>  feel free to text me)</p>
 
-      <div className=' flex flex-col items-center mx-8 mt-30 gap-10 lg:flex-row lg:justify-center lg:gap-8'>
+      <div className=' flex flex-col items-center mx-8 mt-40 gap-10 lg:flex-row lg:justify-center lg:gap-8'>
      <div className='w-[300px] h-[392px] bg-[#FFF0F0] rounded-2xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] '>
                 <h2 className='text-[16px] p-4 font-bold'>Education</h2>
                 <div className='flex justify-center'>

@@ -23,9 +23,9 @@ const Header = () => {
                       <span className='text-base '>Works</span>
                 </Link>
 
-                  <Link href="/contacat" className='flex flex-col items-center'>
+                  <Link href="/contacts" className='flex flex-col items-center'>
                       <Image src="/contact-icon.png" alt='' width={60} height={60}/>
-                      <span className='text-base '>Contact</span>
+                      <span className='text-base '>Contacts</span>
                 </Link>
 
                   <Link href="comments" className='flex flex-col items-center'>
