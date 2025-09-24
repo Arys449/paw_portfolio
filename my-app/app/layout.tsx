@@ -13,6 +13,9 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: "Paw",
   description: "Paw portfolio by Dmytro Poluektov",
+  icons: {
+    icon: "/paw-image.png",
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +30,7 @@ export default function RootLayout({
       >
         <div className="flex flex-col h-screen">
       <Header/>
-        <main className="flex-1 flex ">
+        <main className="flex-1 flex">
         {children}
         </main>
       <Footer/>
