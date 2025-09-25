@@ -32,7 +32,7 @@ const Carousel = () => {
     </button>
 
     <div  className='flex'>
-        <div className='w-2xl h-[480px] bg-[#FFF0F0] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] rounded-2xl flex justify-center items-center'>
+        <div className='w-7xl h-[700px] bg-[#FFF0F0] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] rounded-2xl flex justify-center items-center'>
                 <h2>{projects[currentIndex].title}</h2>
       </div>
     </div>

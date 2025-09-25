@@ -1,40 +1,58 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import { useRef, useEffect } from 'react'
+import { gsap } from 'gsap'
 
 const Header = () => {
+  const headerItem = [
+    { id:1, imagePath:"/home-icon.png", title:"Home", linkPath:"/" },
+    { id:2, imagePath:"/about-icon.png", title:"About", linkPath:"/about" },
+    { id:3, imagePath:"/works-icon.png", title:"Works", linkPath:"/works" },
+    { id:4, imagePath:"/contact-icon.png", title:"Contacts", linkPath:"/contacts" },
+    { id:5, imagePath:"/comments-icon.png", title:"Comms", linkPath:"#"},
+  ];
+
+  const linkRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    linkRef.current.forEach(icon => {
+      if (icon) gsap.set(icon, { scale: 1 });
+    });
+  }, []);
+
+  const handleMouseEnter = (index: number) => {
+    const icon = linkRef.current[index];
+    if (icon) gsap.to(icon, { scale: 1.1, duration: 0.3, ease: "power2.out" });
+  }
+
+  const handleMouseLeave = (index: number) => {
+    const icon = linkRef.current[index];
+    if (icon) gsap.to(icon, { scale: 1, duration: 0.3, ease: "power2.out" });
+  }
+
   return (
     <header className='h-[100px]'>
-        <div className='flex justify-between p-4'>
-            <Image src="/sun.png" alt='sun' width={50} height={50} className="flex-none self-start"/>
-            <div className='w-96 flex justify-between'>
-                <Link href="/" className='flex flex-col items-center'>
-                      <Image src="/home-icon.png" alt='' width={60} height={60}/>
-                      <span className='text-base '>Home</span>
-                </Link>
-
-                  <Link href="/about" className='flex flex-col items-center'>
-                      <Image src="/about-icon.png" alt='' width={60} height={60} className='flex-none'/>
-                      <span className='text-base'>About</span>
-                </Link>
-
-                  <Link href="/works" className='flex flex-col items-center'>
-                      <Image src="/works-icon.png" alt='' width={60} height={60}/>
-                      <span className='text-base '>Works</span>
-                </Link>
-
-                  <Link href="/contacts" className='flex flex-col items-center'>
-                      <Image src="/contact-icon.png" alt='' width={60} height={60}/>
-                      <span className='text-base '>Contacts</span>
-                </Link>
-
-                  <Link href="comments" className='flex flex-col items-center'>
-                      <Image src="/comments-icon.png" alt='' width={60} height={60}/>
-                      <span className='text-base '>Comms</span>
-                </Link>
+      <div className='flex justify-between p-4'>
+        <Image src="/sun.png" alt='sun' width={50} height={50} className="flex-none self-start"/>
+        <div className='w-96 flex justify-between'>
+          {headerItem.map((item, index) => (
+            <div
+              key={item.id}
+              ref={(el) => {linkRef.current[index] = el}}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={() => handleMouseLeave(index)}
+              className='flex flex-col items-center cursor-pointer'
+            >
+              <Link href={item.linkPath}>
+                <Image src={item.imagePath} alt={item.title} width={60} height={60}/>
+              </Link>
+              <span className='text-base'>{item.title}</span>
             </div>
-            <Image src="/user.png" alt='user' width={50} height={50} className="flex-none self-start"/>
+          ))}
         </div>
+        <Image src="/user.png" alt='user' width={50} height={50} className="flex-none self-start"/>
+      </div>
     </header>
   )
 }

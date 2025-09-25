@@ -3,8 +3,8 @@ import React from 'react'
 
 const Contacts = () => {
   return (
-     <div>
-      <h1 className=' w-screen h-24  mt-16 flex justify-center items-center text-6xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]'>Contact me</h1>
+     <div className='mt-24'>
+      <h1 className=' w-screen h-24 flex justify-center items-center text-6xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]'>Contact me</h1>
 
       <p className='w-screen mt-6 h-20 flex justify-center items-center text-2xl text-center'>Those are 3 main tools I use for communication,<br/> I am trying my best to reply within a day, so <br/>  feel free to text me)</p>
 

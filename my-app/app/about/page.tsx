@@ -19,7 +19,7 @@ const About = () => {
       gsap.to(cardsRef.current, {
         yPercent: 0,
         opacity: 1,
-        duration: 1,
+        duration: 0.7,
         ease: "power3.out",
         stagger: 0.2
       });
@@ -28,8 +28,8 @@ const About = () => {
 
 
   return (
-    <div className="w-full flex flex-col">
-      <h1 className="w-full h-24 mt-16 flex justify-center items-center text-6xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
+    <div className="w-full flex flex-col mt-24">
+      <h1 className="w-full h-24 flex justify-center items-center text-6xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
         About me
       </h1>
 

@@ -9,7 +9,7 @@ export default function Home() {
             <p>a web developer</p>
             </div>
             <div>
-              <Image className="drop-shadow-[0_8px_4px_rgba(0,0,0,0.25)]" src="/paw-image.png" alt="" width={100} height={100}/>
+              <Image className="drop-shadow-[0_8px_4px_rgba(0,0,0,0.25)]" src="/paw-image.png" alt="" width={90} height={90}/>
             </div>
         </div>
     </div>
