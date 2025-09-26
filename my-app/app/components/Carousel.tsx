@@ -26,21 +26,23 @@ const Carousel = () => {
 
 
   return (
-  <div className='flex gap-10'>
-    <button onClick={prevSlide}>
-            <Image src='/arrow-right.png' alt='' width={45} height={45} className='transform scale-x-[-1]'/>
-    </button>
+  <div className='flex flex-col gap-10'>
+
 
     <div  className='flex'>
-        <div className='w-7xl h-[700px] bg-[#FFF0F0] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] rounded-2xl flex justify-center items-center'>
+        <div className='w-90 md:w-2xl lg:w-5xl h-[700px] bg-[#FFF0F0] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] rounded-2xl flex justify-center items-center'>
                 <h2>{projects[currentIndex].title}</h2>
       </div>
     </div>
-
-      
+<div className='flex gap-10 justify-center'>
+        <button onClick={prevSlide}>
+            <Image src='/arrow-right.png' alt='' width={45} height={45} className='transform scale-x-[-1]'/>
+    </button>
         <button onClick={nextSlide}>
             <Image src='/arrow-right.png' alt='' width={45} height={45}/>
         </button>
+</div>
+  
   </div>
     
   )
