@@ -1,34 +1,21 @@
-"use client";
-import gsap from "gsap";
-import React, { useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
+import React from "react";
+import AnimatedWrapper from "../components/AnimatedWrapper";
 
 const About = () => {
   const aboutCards = [
-    { id: 1, title: "Education", items: ["Education sample", "Education sample", "Education sample"] },
-    { id: 2, title: "Dev.Tools", items: ["HTML/CSS", "TypeScript", "React", "Sanity", "Python", "JavaScript", "Next.Js", "Gsap", "Figma", "Bootstrap"] },
-    { id: 3, title: "Languages", items: ["English", "Ukrainian", "Russian"] }
+    { id: 1,
+      title: "Education", 
+      items: ["Education sample", "Education sample", "Education sample"] },
+    { id: 2, 
+      title: "Dev.Tools", 
+      items: ["HTML/CSS", "TypeScript", "React", "Sanity", "Python", "JavaScript", "Next.Js", "Gsap", "Figma", "Bootstrap"] },
+    { id: 3, 
+      title: "Languages", 
+      items: ["English", "Ukrainian", "Russian"] }
   ];
 
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const pathname = usePathname();
-
-  useEffect(() => {
-    if (pathname === "/about") {
-      gsap.set(cardsRef.current, { yPercent: 100, opacity: 0 });
-      gsap.to(cardsRef.current, {
-        yPercent: 0,
-        opacity: 1,
-        duration: 0.7,
-        ease: "power3.out",
-        stagger: 0.2
-      });
-    }
-  }, [pathname]);
-
-
   return (
-    <div className="w-full flex flex-col mt-24">
+    <div className="w-full flex flex-col lg:mt-24">
       <h1 className="w-full h-24 flex justify-center items-center text-6xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
         About me
       </h1>
@@ -37,13 +24,12 @@ const About = () => {
         Those are 3 main tools I use for communication,<br /> I am trying my best to reply within a day, so <br /> feel free to text me)
       </p>
 
-      <div className="flex flex-col items-center mx-8 mt-40 gap-10 lg:flex-row lg:justify-center lg:gap-8">
-        {aboutCards.map((card, index) => (
+      <div className="flex justify-center items-center mt-8 mx-8 lg:mt-40 gap-10 ">
+        <AnimatedWrapper>
+        {aboutCards.map((card,) => (
           <div
-
-            ref={(el) => { cardsRef.current[index] = el; }}
             key={card.id}
-            className="w-[300px] h-[392px] bg-[#FFF0F0] rounded-2xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] flex flex-col"
+            className="w-[300px] h-[392px] bg-[#fff1e6] rounded-2xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] flex flex-col"
           >
             <h2 className="text-[16px] p-4 font-bold">{card.title}</h2>
 
@@ -63,6 +49,7 @@ const About = () => {
             <h2 className="text-base p-4 font-bold transform scale-x-[-1] scale-y-[-1]">{card.title}</h2>
           </div>
         ))}
+        </AnimatedWrapper>
       </div>
       
     </div>
