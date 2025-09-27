@@ -5,7 +5,7 @@ const About = () => {
   const aboutCards = [
     { id: 1,
       title: "Education", 
-      items: ["Education sample", "Education sample", "Education sample"] },
+      items: ["Education example", "Education example", "Education example"] },
     { id: 2, 
       title: "Dev.Tools", 
       items: ["HTML/CSS", "TypeScript", "React", "Sanity", "Python", "JavaScript", "Next.Js", "Gsap", "Figma", "Bootstrap"] },
