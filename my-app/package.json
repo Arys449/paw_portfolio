@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -24,10 +23,5 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
     "@eslint/eslintrc": "^3"
-=======
-  "dependencies": {
-    "@gsap/react": "^2.1.2",
-    "gsap": "^3.13.0"
->>>>>>> 90464b038f42aec628a5d18d7295c3d604ee51fa
   }
 }
