@@ -7,17 +7,18 @@ import { SplitText } from "gsap/SplitText";
 gsap.registerPlugin(SplitText);
 
 type AnimatedWrapperProps = {
-  children: ReactElement[]; // React elements (cards)
+  children: ReactElement[] | ReactNode; // React elements (cards)
   stagger?: number;
   duration?: number;
+  yPercent?: number;
 };
 
-const AnimatedWrapper = ({ children, stagger = 0.2, duration = 0.7 }: AnimatedWrapperProps) => {
+const AnimatedWrapper = ({ children, stagger = 0.2, duration = 0.7, yPercent = 100 }: AnimatedWrapperProps) => {
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
    useGSAP(() => {
     gsap.from(itemsRef.current, {
-      yPercent: 100,
+      yPercent,
       opacity: 0,
       duration,
       ease: "power3.out",

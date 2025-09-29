@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SplitTextAnimationWrapper } from "./components/Animations";
+import AnimatedWrapper, { SplitTextAnimationWrapper } from "./components/Animations";
 
 export default function Home() {
   return (
@@ -13,9 +13,11 @@ export default function Home() {
 
             </SplitTextAnimationWrapper>
             </div>
+            <AnimatedWrapper yPercent={300}>
             <div>
               <Image className="drop-shadow-[0_8px_4px_rgba(0,0,0,0.25)]" src="/paw-image.png" alt="" width={90} height={90}/>
             </div>
+            </AnimatedWrapper>
         </div>
     </div>
   );
